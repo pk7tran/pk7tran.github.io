@@ -37,6 +37,14 @@ h2.clear{
     max-width: 100%;
     margin: 1%;
 }
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .ills div {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
 #ill {
     background-color: #ccf0fc;
     text-align: center;
