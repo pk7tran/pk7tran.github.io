@@ -3,23 +3,24 @@ body {
     margin: auto;
     width: 90%;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 100%;
 }
 .desc {
     margin: auto;
     width: 80%;
+    padding-bottom: 60px;
 }
 .circle{
-    width: 300px;
-    height: 300px;
+    width: 35%;
+    aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
     border-radius:20px;
     float:left;
-    margin-right: 100px;
+    margin-right: 10%;
 }
 h2.clear{
     clear: both;
-    padding-top: 60px;
     margin-left: auto;
     width:90%;
 }
@@ -37,7 +38,7 @@ h2.clear{
     margin: 1%;
 }
 #ill {
-    background-color: #f7ebe6;
+    background-color: #ccf0fc;
     text-align: center;
     padding-bottom: 5px;
     border-radius: 10px;
