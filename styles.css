@@ -42,6 +42,7 @@ h2.clear{
     .ills div {
         flex: 100%;
         max-width: 100%;
+        margin: 1%;
     }
 }
 
