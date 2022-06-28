@@ -5,6 +5,34 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 100%;
 }
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.8);
+}
+.overlay-content {
+    position: fixed;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+}
 .desc {
     margin: auto;
     width: 80%;
@@ -35,14 +63,12 @@ h2.clear{
     vertical-align: middle;
     flex: 48%;
     max-width: 100%;
-    margin: 1%;
 }
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .ills div {
         flex: 100%;
         max-width: 100%;
-        margin: 1%;
     }
 }
 
@@ -54,6 +80,7 @@ h2.clear{
     border-radius: 10px;
     margin-bottom: 5%;
     margin-top: 5%;
+    margin-right: 5%;
 }
 #ill img {
     vertical-align: middle;
