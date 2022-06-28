@@ -1,5 +1,5 @@
 body {
-    background-color: #fff8f5;
+    background-color: #e8f4f8;
     margin: auto;
     width: 90%;
     font-family: Helvetica, Arial, sans-serif;
@@ -7,6 +7,14 @@ body {
 .desc {
     margin: auto;
     width: 80%;
+}
+.circle{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius:50%;
+    float:left;
 }
 h2.clear{
     clear: both;
