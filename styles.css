@@ -13,8 +13,9 @@ body {
     height: 300px;
     position: relative;
     overflow: hidden;
-    border-radius:50%;
+    border-radius:20px;
     float:left;
+    margin-right: 100px;
 }
 h2.clear{
     clear: both;
