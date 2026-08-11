@@ -1,8 +1,8 @@
 body {
     --sidebar-spacing: 50px;
     background-color: #f2fcff;
-    margin: 0 auto;
-    width: min(94%, 1500px);
+    margin: 0;
+    width: 100%;
     overflow-x: hidden;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 100%;
@@ -26,6 +26,9 @@ body {
     position: fixed;
     width: min(80%, 1000px);
     max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -35,21 +38,25 @@ body {
     text-align: center;
 }
 .overlay-content .overlay-caption {
+    box-sizing: border-box;
+    width: min(100%, 800px);
     margin: 12px auto 0;
-    max-width: 800px;
     line-height: 1.5;
+    text-align: center;
 }
 .desc {
     box-sizing: border-box;
     position: sticky;
     top: 0;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: var(--sidebar-spacing);
     max-height: 100vh;
     overflow-y: auto;
     background-color: #ffffff;
     border-radius: 0 8px 8px 0;
-    box-shadow: -100vw 0 0 100vw #ffffff;
 }
 .circle{
     width: min(100%, 240px);
@@ -65,6 +72,7 @@ h2.clear{
 }
 .portfolio {
     min-width: 0;
+    padding-right: var(--sidebar-spacing);
 }
 .ills {
     width: 100%;
@@ -79,17 +87,21 @@ h2.clear{
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 800px) {
     body {
+        margin: 0 auto;
         width: min(90%, 720px);
         display: block;
     }
     .desc {
         position: static;
         height: auto;
+        display: block;
         max-height: none;
         overflow: visible;
         padding-bottom: 16px;
         border-radius: 8px;
-        box-shadow: none;
+    }
+    .portfolio {
+        padding-right: 0;
     }
     .ills > .illustration-column {
         flex: 100%;
@@ -144,6 +156,9 @@ h2.clear{
 }
 .overlay .overlay-content img {
     box-sizing: border-box;
+    display: block;
+    width: auto;
+    max-width: 100%;
     max-height: calc(90vh - 100px);
     object-fit: contain;
     padding: 0;
