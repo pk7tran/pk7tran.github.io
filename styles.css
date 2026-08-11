@@ -1,9 +1,15 @@
 body {
-    background-color: #e8f4f8;
-    margin: auto;
-    width: 90%;
+    --sidebar-spacing: 50px;
+    background-color: #f2fcff;
+    margin: 0 auto;
+    width: min(94%, 1500px);
+    overflow-x: hidden;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 100%;
+    display: grid;
+    grid-template-columns: minmax(340px, 460px) minmax(0, 1fr);
+    gap: var(--sidebar-spacing);
+    align-items: start;
 }
 .overlay {
     height: 100%;
@@ -14,78 +20,132 @@ body {
     top: 0;
     left: 0;
     background-color: rgba(0,0,0, 0.8);
+    cursor: pointer;
 }
 .overlay-content {
     position: fixed;
-    width: 50%;
+    width: min(80%, 1000px);
+    max-height: 90vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+    color: white;
+    cursor: default;
+    text-align: center;
 }
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
+.overlay-content .overlay-caption {
+    margin: 12px auto 0;
+    max-width: 800px;
+    line-height: 1.5;
 }
 .desc {
-    margin: auto;
-    width: 80%;
-    padding-bottom: 60px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: var(--sidebar-spacing);
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-radius: 0 8px 8px 0;
+    box-shadow: -100vw 0 0 100vw #ffffff;
 }
 .circle{
-    width: 35%;
+    width: min(100%, 240px);
     aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
     border-radius:20px;
-    float:left;
-    margin-right: 10%;
+    margin-bottom: 24px;
 }
 h2.clear{
-    clear: both;
-    margin-left: auto;
-    width:90%;
+    margin-left: 0;
+    width: 100%;
+}
+.portfolio {
+    min-width: 0;
 }
 .ills {
-    width: 83%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
 }
-.ills div {
+.ills > .illustration-column {
     vertical-align: middle;
     flex: 48%;
     max-width: 100%;
 }
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 800px) {
-    .ills div {
+    body {
+        width: min(90%, 720px);
+        display: block;
+    }
+    .desc {
+        position: static;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        padding-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: none;
+    }
+    .ills > .illustration-column {
         flex: 100%;
         max-width: 100%;
     }
 }
 
-#ill {
-    background-color: #ccf0fc;
+.ill {
+    background-color: #e6f9ff;
     text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 5px;
     border-radius: 10px;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    margin-right: 5%;
+    margin: 20px 10px;
 }
-#ill img {
-    vertical-align: middle;
-    position: center;
-    width:94%;
-    padding: 3%;
-    border-radius: 20px;
+.illustration-column:first-child .ill {
+    margin-left: 0;
+}
+.thumbnail-container {
+    position: relative;
+    width: 94%;
+    margin: 3%;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.thumbnail-container img {
+    display: block;
+    width: 100%;
+}
+.thumbnail-caption {
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: clamp(16px, 8%, 36px);
+    background-color: rgba(0, 0, 0, 0.76);
+    color: white;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 180ms ease;
+}
+.thumbnail-container:hover .thumbnail-caption,
+.thumbnail-container:focus-visible .thumbnail-caption {
+    opacity: 1;
+}
+.thumbnail-container:focus-visible {
+    outline: 3px solid #176b87;
+    outline-offset: 3px;
+}
+.overlay .overlay-content img {
+    box-sizing: border-box;
+    max-height: calc(90vh - 100px);
+    object-fit: contain;
+    padding: 0;
+    border-radius: 0;
 }
